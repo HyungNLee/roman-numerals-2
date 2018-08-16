@@ -22,9 +22,14 @@ function romanNumeral(string) {
 function stringToArray(string){
   var inputArray = string.split("");
   //alert(inputArray); //this is a test the stringToArray fxn above works.
-  var newArray = map(inputArray);
-  var indexPosition =
-
+  var zeroArray = [];
+  for (i = 0; i < inputArray.length; i++) {
+    var zero = inputArray.length - (i + 1);
+    var power = Math.pow(10, zero);
+    var newInput = parseInt(inputArray[i]) * power;
+    zeroArray.push(newInput);
+  }
+  //alert(zeroArray);//test fxn call to each input array split parses int and applies fmla for exponential power 
 }
 //front end
 $(document).ready(function(){
