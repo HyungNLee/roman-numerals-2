@@ -43,12 +43,13 @@ function conversion(array){
   array.forEach(function(number) {
     for (var i = 0; i < numberValues.length; i++) {
       while(number % numberValues[i] < number){
+//        alert(number + " % " + numberValues[i] + " = " + number % numberValues[i])
         result = result + symbols[i];
         number = number - numberValues[i];
       }
     }
   });
-  alert(result);
+//  alert(result);
   return result;
 }
 
