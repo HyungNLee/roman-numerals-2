@@ -28,9 +28,17 @@ function stringToArray(string){
     var power = Math.pow(10, zero);
     var newInput = parseInt(inputArray[i]) * power;
     zeroArray.push(newInput);
+    //alert(zeroArray);//test fxn call to each input array split parses int and applies fmla for exponential power
   }
-  //alert(zeroArray);//test fxn call to each input array split parses int and applies fmla for exponential power 
+  return zeroArray;
 }
+
+function conversion(array){
+    var symbols = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
+    var numberValues = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+
+}
+
 //front end
 $(document).ready(function(){
   $("form#formOne").submit(function(event){
@@ -39,6 +47,9 @@ $(document).ready(function(){
     var userInput = $("#inputBox").val();
     //alert(userInput); //testing to see if we save any user value
     //alert(isNotNumber(userInput));// calls the fxn isNotNumber above
+    var numerals = [];
+
     romanNumeral(userInput);
+
   });
 });
