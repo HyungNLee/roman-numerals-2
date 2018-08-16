@@ -14,7 +14,8 @@ function romanNumeral(string) {
   } else if (parseInt(string) > 3999) {
     alert("Please enter a number under 4,000");
   } else {
-    stringToArray(string);
+    var convertedArray = stringToArray(string);
+    conversion(convertedArray);
   }
 }
 
@@ -34,10 +35,40 @@ function stringToArray(string){
 }
 
 function conversion(array){
-    var symbols = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
-    var numberValues = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  var symbols = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
+  var numberValues = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
 
+  var result = "";
+
+  array.forEach(function(number) {
+    for (var i = 0; i < numberValues.length; i++) {
+      while(number % numberValues[i] < number){
+        result = result + symbols[i];
+        number = number - numberValues[i];
+      }
+    }
+  });
+  alert(result);
+  return result;
 }
+
+    // for (i = 0; i < array.length; i++){ //array to go through each index& depending on their value, get the symbol
+    //   var numeralArray = "";
+    //   var  = numberValues[i];
+    //
+    // }
+    //
+
+
+    //
+    // var i = 0;
+    // var numeralArray = [];
+    // do {
+    //   i = i + 1;
+    //   numeralArray = numeralArray + i;
+    // } while (i < numberValues);
+
+
 
 //front end
 $(document).ready(function(){
