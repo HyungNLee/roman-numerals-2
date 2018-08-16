@@ -15,7 +15,8 @@ function romanNumeral(string) {
     alert("Please enter a number under 4,000");
   } else {
     var convertedArray = stringToArray(string);
-    conversion(convertedArray);
+    var returnString =  conversion(convertedArray);
+    return returnString;
   }
 }
 
@@ -49,7 +50,7 @@ function conversion(array){
       }
     }
   });
-//  alert(result);
+  // alert(result);
   return result;
 }
 
@@ -80,8 +81,7 @@ $(document).ready(function(){
     //alert(userInput); //testing to see if we save any user value
     //alert(isNotNumber(userInput));// calls the fxn isNotNumber above
     var numerals = [];
-
-    romanNumeral(userInput);
-
+    var outputText = romanNumeral(userInput);
+    $("#output").text(outputText);
   });
 });
