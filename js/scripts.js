@@ -21,8 +21,9 @@ function romanNumeral(string) {
 //get user input into an array and then split for parts to evaluate.
 function stringToArray(string){
   var inputArray = string.split("");
-  //alert(inputArray); //this is a test the fxn above works.
-
+  //alert(inputArray); //this is a test the stringToArray fxn above works.
+  var newArray = map(inputArray);
+  var indexPosition =
 
 }
 //front end
